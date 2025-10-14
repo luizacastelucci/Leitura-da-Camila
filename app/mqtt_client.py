@@ -54,7 +54,7 @@ class MQTTClient:
             print(f"Erro ao processar a mensagem e persistir no BD: {e}")
  
     def setup_mqtt(self):
-        client = mqtt.Client(transport="websockets")
+        client = mqtt.Client()
        
         # TLS/SSL é obrigatório para a porta 8883
         client.tls_set()

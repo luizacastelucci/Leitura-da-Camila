@@ -39,11 +39,15 @@ def start_mqtt_loop():
     except Exception as e:
         print(f"ERRO FATAL ao iniciar MQTT: {e}")
  
-@app.on_event("startup") # Arrumar o erro, on_event não está funcionando
+# @app.on_event("startup") # Arrumar o erro, on_event não está funcionando
 async def startup_event():
     """Evento disparado ao iniciar a API (inicializa o MQTT antes de aceitar requisições)."""
     mqtt_thread = threading.Thread(target=start_mqtt_loop, daemon=True)
     mqtt_thread.start()
+    
+app.add_event_handler("startup", startup_event)
+
+
  
 def custom_openapi():
     if app.openapi_schema:
