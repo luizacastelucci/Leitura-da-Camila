@@ -6,6 +6,12 @@ Este repositório contém um projeto desenvolvido em Python que realiza a coleta
 - `Consumo MQTT:` Utiliza a biblioteca paho-mqtt para se conectar a um broker e subscrever aos tópicos da Bancada Didática 4.0 (Camila).
 - `Persistência de Dados:` Utiliza mysql-connector para a persistência de dados em um banco de dados `MySQL`
 - `API RESTful:` Com auxílio do framework FastAPI, é possível utilizar os métodos HTTP para adquirir as informações armazenadas.
+
+ ## Acesso
+ - Para acessar a documentação, inicie o servidor usando o comando `uvicorn main:app --reload`
+ - Em seguida, acesse a porta: `127.0.0.1:8000/docs`
+ - Ou para dados direcionados, acesse a rota `127.0.0.1:8000/data/{variavel}
+ - Exemplos de variaves: 'umidade', 'temperatura', 'produzindo' etc.
  
 - ## Pré-requisitos
 - Python 3.9+
